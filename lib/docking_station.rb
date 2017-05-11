@@ -13,8 +13,10 @@ class DockingStation
   def release_bike
     if empty?
       raise('Sorry there are no bikes')
+    elsif bikes[-1].working?
+        bikes.pop
     else
-      bikes.pop
+        raise('This bike does not work')
     end
   end
 
@@ -28,6 +30,8 @@ class DockingStation
   end
 
 private
+attr_reader :bikes
+
   def full?
     return true if bikes.length == DEFAULT_CAPACITY
   end
