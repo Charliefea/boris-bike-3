@@ -10,4 +10,8 @@ describe Van do
   it 'responds to #bikes' do
     expect(subject).to respond_to(:bikes)
   end
+  it 'should return an array when #bikes is called' do
+    expect(subject.bikes.class).to eq Array
+  end
+
 end
