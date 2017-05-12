@@ -13,5 +13,12 @@ describe Van do
   it 'should return an array when #bikes is called' do
     expect(subject.bikes.class).to eq Array
   end
-
+  it 'should store the bike which was picked up in bikes' do
+    bike = Bike.new
+    station = DockingStation.new
+    van = subject
+    station.docks_bike(bike)
+    van.pick_up_bikes_at(station)
+    expect(van.bikes[-1]).to eq bike
+  end
 end
