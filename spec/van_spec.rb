@@ -7,4 +7,7 @@ describe Van do
   it 'responds to #pick_up_bikes_at ' do
     expect(subject).to respond_to(:pick_up_bikes_at).with(1).argument
   end
+  it 'responds to #bikes' do
+    expect(subject).to respond_to(:bikes)
+  end
 end
