@@ -46,7 +46,7 @@ describe DockingStation do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
-  it 'the docking station does not release a broken bike' do
+  it 'the docking station does not release a broken bike to a user' do
     brokenbike = double("brokenbike", :working? => false)
     subject.docks_bike(brokenbike)
     expect { subject.release_bike}.to raise_error('This bike does not work')
@@ -58,4 +58,9 @@ describe DockingStation do
     expect(subject.docks_bike(workingbike)).to eq(workingbike)
     expect(subject.docks_bike(brokenbike)).to eq(brokenbike)
   end
+
+  it 'responds to  #release_broken_bikes'do
+    is_expected.to respond_to :release_broken_bikes
+  end
+
 end

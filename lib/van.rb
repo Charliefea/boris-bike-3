@@ -4,5 +4,6 @@ class Van
     @bikes = []
   end
   def pick_up_bikes_at(station)
+    
   end
 end
