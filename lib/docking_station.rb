@@ -1,5 +1,3 @@
-require './lib/bike.rb'
-
 class DockingStation
 
   attr_reader :bikes, :capacity
