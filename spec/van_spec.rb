@@ -5,6 +5,6 @@ describe Van do
     expect(Van).to respond_to :new
   end
   it 'responds to #pick_up ' do
-    expect(subject).to respond_to :pick_up
+    expect(subject).to respond_to :pick_up_bikes_at
   end
 end
